@@ -1,0 +1,29 @@
+project_name: genlink
+env:
+  - GO111MODULE=on
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: .
+    binary: genlink
+    ldflags: -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}}
+archives:
+  - replacements:
+      darwin: darwin
+      linux: linux
+      windows: windows
+      amd64: x86_64
+    files:
+      - LICENSE
+      - CREDITS
+release:
+  prerelease: auto
+brews:
+  - tap:
+      owner: michimani
+      name: homebrew-genlink
+    folder: Formula
+    homepage: 'https://github.com/michimani/genlink'
+    description: 'Generates the URL link in various formats'
+    license: "MIT"
