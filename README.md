@@ -78,3 +78,5 @@ Generate Type :  qr
 QR code has been created.
 /path/to/out/dir/8b448f6e8e9c09185f6f6ca8d143397b85586b8154cb9233cdc62cf2cecd90c6.png
 ```
+
+![d11209189b7a094eb4b1c08b6ea73b8b8a6feba7bd6154efc2effdc87120c7b7](https://user-images.githubusercontent.com/9986092/106961267-acf2cc00-6780-11eb-9d83-9a9d4664a476.png)
