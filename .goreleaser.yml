@@ -7,7 +7,7 @@ before:
 builds:
   - main: .
     binary: genlink
-    ldflags: -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}}
+    ldflags: -s -w -X main.version={{.Version}} -X main.revision={{.ShortCommit}} -X main.date={{.Date}}
 archives:
   - replacements:
       darwin: darwin

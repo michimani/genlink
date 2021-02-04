@@ -6,8 +6,24 @@ import (
 	"os"
 )
 
+var (
+	targetUrl *string = flag.String("u", "", "Type of link to output")
+	genType   *string = flag.String("t", "md", "Type of link to output")
+	outDir    *string = flag.String("o", "", "Directory to output QR code")
+	version   string
+	revision  string
+)
+
 func usage() {
-	format := `Usage:
+	format := `
+                  _ _       _
+  __ _  ___ _ __ | (_)_ __ | | __
+ / _' |/ _ \ '_ \| | | '_ \| |/ /
+| (_| |  __/ | | | | | | | |   <
+ \__, |\___|_| |_|_|_|_| |_|_|\_\
+ |___/   Version: %s-%s
+
+Usage:
   genlink [flags] [values]
 Flags:
 	-u (required)  URL
@@ -23,12 +39,8 @@ Flags:
 Author:
   michimani <michimani210@gmail.com>
 `
-	fmt.Fprintln(os.Stderr, format)
+	fmt.Fprintln(os.Stdout, fmt.Sprintf(format, version, revision))
 }
-
-var targetUrl *string = flag.String("u", "", "Type of link to output")
-var genType *string = flag.String("t", "md", "Type of link to output")
-var outDir *string = flag.String("o", "", "Directory to output QR code")
 
 func main() {
 	flag.Usage = usage
@@ -38,10 +50,6 @@ func main() {
 }
 
 func run() int {
-	fmt.Println("Target URL    : ", *targetUrl)
-	fmt.Println("Generate Type : ", *genType)
-	fmt.Print("\n\n")
-
 	res, err := Generate(*targetUrl, *genType, *outDir)
 	if err != nil {
 		fmt.Println(err.Error())

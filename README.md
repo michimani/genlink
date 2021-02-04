@@ -14,29 +14,22 @@ This tool can generate a link to the specified URL in the following format.
 
 ## Installation
 
-1. Clone this repository
-
-    ```bash
-    $ git clone https://github.com/michimani/genlink.git
-    ```
-
-2. Install Go modules
-
-    ```bash
-    $ cd genlink
-    $ go install
-    ```
-
-3. Build
-
-    ```bash
-    $ go build
-    ```
+```bash
+$ brew install michimani/genlink/genlink
+```
 
 ## Usage
 
 ```bash
 $ ./genlink -h
+
+                  _ _       _
+  __ _  ___ _ __ | (_)_ __ | | __
+ / _' |/ _ \ '_ \| | | '_ \| |/ /
+| (_| |  __/ | | | | | | | |   <
+ \__, |\___|_| |_|_|_|_| |_|_|\_\
+ |___/   Version: v*.*.*-*******
+
 Usage:
   genlink [flags] [values]
 Flags:
