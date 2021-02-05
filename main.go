@@ -39,7 +39,7 @@ Flags:
 Author:
   michimani <michimani210@gmail.com>
 `
-	fmt.Fprintln(os.Stdout, fmt.Sprintf(format, version, revision))
+	fmt.Fprintln(os.Stderr, fmt.Sprintf(format, version, revision))
 }
 
 func main() {
